@@ -8,29 +8,29 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-const feelingsReducer = () => {
+// const feelingsReducer = () => {
 
-}
+// }
 
-const understandingReducer = () => {
-    
-}
+// const understandingReducer = () => {
 
-const supportReducer = () => {
-    
-}
+// }
 
-const commentsReducer = () => {
-    
-}
+// const supportReducer = () => {
+
+// }
+
+// const commentsReducer = () => {
+
+// }
 
 const storeInstance = createStore(
-    combineReducers({
-        feelingsReducer,
-        understandingReducer,
-        supportReducer,
-        commentsReducer,
-    }),
+    // combineReducers({
+    //     feelingsReducer,
+    //     understandingReducer,
+    //     supportReducer,
+    //     commentsReducer,
+    // }),
     applyMiddleware(logger),
 );
 
