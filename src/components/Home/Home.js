@@ -6,7 +6,7 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <h1>How are you feeling?</h1>
+                <h1>How are you feeling today?</h1>
             </div>
         )
     }

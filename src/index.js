@@ -8,12 +8,29 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
+const feelingsReducer = () => {
+
+}
+
+const understandingReducer = () => {
+    
+}
+
+const supportReducer = () => {
+    
+}
+
+const commentsReducer = () => {
+    
+}
+
 const storeInstance = createStore(
-    // combineReducers({
-    //     pizzaReducer,
-    //     customerReducer,
-    //     totalReducer,
-    // }),
+    combineReducers({
+        feelingsReducer,
+        understandingReducer,
+        supportReducer,
+        commentsReducer,
+    }),
     applyMiddleware(logger),
 );
 
