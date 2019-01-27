@@ -26,7 +26,7 @@ class Understanding extends Component {
                     <h1>Review Your Feedback</h1>
                     <br />
                     <br />
-                    <h3>Feelings:</h3>
+                    <h3>Feeling: {this.props.reduxStore.feeling}</h3>
                     <h3>Understanding:</h3>
                     <h3>Support:</h3>
                     <h3>Comments:</h3>
