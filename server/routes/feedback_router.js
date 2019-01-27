@@ -29,7 +29,12 @@ router.get('/:id', (req,res) => {
     comments FROM "feedback" 
     ORDER BY id ASC
     LIMIT 100;`;
-    pool.query(queryText, [id]).then(function ())
+    pool.query(queryText, [id]).then((result) => {
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log(error, 'GET');
+        res.sendStatus(500);
+    });
 })
 
 
