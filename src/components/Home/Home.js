@@ -35,6 +35,19 @@ class Home extends Component {
 
 
     render() {
+        let status = '';
+        let text = '';
+        if (this.props.reduxStore.feeling === 0 ||
+            this.props.reduxStore.understanding === 0 ||
+            this.props.reduxStore.support === 0 ||
+            this.props.reduxStore.comments === '') {
+            text = "Please Finish Before Submitting"
+            status = true;
+
+        } else {
+            text = "Submit Final Feedback"
+            status = false;
+        }
         return (
             <div>
                 <header className="App-header">
@@ -51,7 +64,7 @@ class Home extends Component {
                         <br />
                         <br />
                         <Button id="Submit-btn" variant="contained"
-                            onClick={this.handleSubmitBtn}>Submit</Button>
+                            onClick={this.handleSubmitBtn}>Enter</Button>
                         <Button id="Next-btn" color="primary" variant="contained"
                             onClick={this.handleNextBtn}>Next</Button>
                     </Card>
@@ -63,6 +76,8 @@ class Home extends Component {
                         <h3>Understanding: {this.props.reduxStore.understanding}</h3>
                         <h3>Support: {this.props.reduxStore.support}</h3>
                         <h3>Comments: {this.props.reduxStore.comments}</h3>
+                        <Button id="Final-submit-btn" color="primary" variant="contained"
+                            disabled={status} onClick={this.handleSubmitFinalFeedback}>{text}</Button>
                     </Card>
                 </div>
             </div>
