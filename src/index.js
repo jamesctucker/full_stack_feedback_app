@@ -8,9 +8,12 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-// const feelingsReducer = () => {
-
-// }
+const feeling = (state = 0, action) => {
+    if (action.type === 'UPDATE_FEELING') {
+        return action.payload;
+    }
+    return state;
+}
 
 // const understandingReducer = () => {
 
@@ -25,12 +28,12 @@ import logger from 'redux-logger';
 // }
 
 const storeInstance = createStore(
-    // combineReducers({
-    //     feelingsReducer,
-    //     understandingReducer,
-    //     supportReducer,
-    //     commentsReducer,
-    // }),
+    combineReducers({
+        feeling,
+        //     understandingReducer,
+        //     supportReducer,
+        //     commentsReducer,
+    }),
     applyMiddleware(logger),
 );
 

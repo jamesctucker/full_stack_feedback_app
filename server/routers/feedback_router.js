@@ -15,9 +15,6 @@ router.post('/', (req, res) => {
 
 })
 
-router.get('/', (req, res) => {
 
-
-})
 
 module.exports = router;
