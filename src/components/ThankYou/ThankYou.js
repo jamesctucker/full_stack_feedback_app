@@ -5,7 +5,12 @@ class ThankYou extends Component {
     render() {
         return (
             <div>
-                <h1>Thank You!</h1>
+                <header className="Thank-you-header">
+                    <h1 className="Thank-you-title">Feedback!</h1>
+                </header>
+                <div className="Feedback-body">
+                    <h1>Thank You!</h1>
+                </div>
             </div>
         )
     }

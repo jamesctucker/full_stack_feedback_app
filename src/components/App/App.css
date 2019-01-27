@@ -17,3 +17,20 @@
   font-size: large;
 }
 
+/* .Feedback-body {
+  width: 800px;
+  margin
+} */
+
+.Thank-you-header {
+  background-color: white;
+  min-height: 70px;
+  padding: 20px;
+  color: black;
+  border: 3px;
+  border-style: solid;
+  border-color: black;
+
+
+}
+
