@@ -15,24 +15,33 @@ const feeling = (state = 0, action) => {
     return state;
 }
 
-// const understandingReducer = () => {
+const understanding = (state = 0, action) => {
+    if (action.type === 'UPDATE_UNDERSTANDING') {
+        return action.payload;
+    }
+    return state;
+}
 
-// }
+const support = (state = 0, action) => {
+    if (action.type === 'UPDATE_SUPPORT') {
+        return action.payload;
+    }
+    return state;
+}
 
-// const supportReducer = () => {
-
-// }
-
-// const commentsReducer = () => {
-
-// }
+const comments = (state = 'None', action) => {
+    if (action.type === 'UPDATE_COMMENTS') {
+        return action.payload;
+    }
+    return state;
+}
 
 const storeInstance = createStore(
     combineReducers({
         feeling,
-        //     understandingReducer,
-        //     supportReducer,
-        //     commentsReducer,
+        understanding,
+        support,
+        comments,
     }),
     applyMiddleware(logger),
 );

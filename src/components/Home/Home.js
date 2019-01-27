@@ -51,10 +51,10 @@ class Home extends Component {
                     <h1>Review Your Feedback</h1>
                     <br />
                     <br />
-                    <h3>Feeling: {this.props.reduxStore.feeling}</h3>
-                    <h3>Understanding:</h3>
-                    <h3>Support:</h3>
-                    <h3>Comments:</h3>
+                    <h3>Feelings: {this.props.reduxStore.feeling}</h3>
+                    <h3>Understanding: {this.props.reduxStore.understanding}</h3>
+                    <h3>Support: {this.props.reduxStore.support}</h3>
+                    <h3>Comments: {this.props.reduxStore.comments}</h3>
                 </div>
             </div>
         )

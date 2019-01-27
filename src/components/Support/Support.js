@@ -3,7 +3,21 @@ import { connect } from 'react-redux';
 
 class Support extends Component {
     handleNextBtn = (event) => {
+        this.setState({
+            rating: '',
+        })
         this.props.history.push('/4');
+    }
+
+    handleSupportRating = (event) => {
+        const action = { type: 'UPDATE_SUPPORT', payload: this.state.rating };
+        this.props.dispatch(action);
+    }
+
+    updateSupportRating = (event) => {
+        this.setState({
+            rating: event.target.value,
+        })
     }
     render() {
         return (
@@ -17,7 +31,8 @@ class Support extends Component {
                     <p><i>On a scale of 1 - 5</i></p>
                     <br />
                     <br />
-                    <input className="Feedback-input" type="number"></input>
+                    <input onChange={this.updateSupportRating} className="Feedback-input" type="number"></input>
+                    <button onClick={this.handleSupportRating}>Submit</button>
                     <br />
                     <br />
                     <button onClick={this.handleNextBtn}>Next</button>
@@ -26,10 +41,10 @@ class Support extends Component {
                     <h1>Review Your Feedback</h1>
                     <br />
                     <br />
-                    <h3>Feelings:</h3>
-                    <h3>Understanding:</h3>
-                    <h3>Support:</h3>
-                    <h3>Comments:</h3>
+                    <h3>Feelings: {this.props.reduxStore.feeling}</h3>
+                    <h3>Understanding: {this.props.reduxStore.understanding}</h3>
+                    <h3>Support: {this.props.reduxStore.support}</h3>
+                    <h3>Comments: {this.props.reduxStore.comments}</h3>
                 </div>
             </div>
         )
