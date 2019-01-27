@@ -1,17 +1,33 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
 
 class Comments extends Component {
     handleNextBtn = (event) => {
-        this.setState({
-            rating: '',
+        let feedbackRating = {
+            feeling: this.props.reduxStore.feeling,
+            understanding: this.props.reduxStore.understanding,
+            support: this.props.reduxStore.support,
+            comments: this.props.reduxStore.comments
+        }
+        axios({
+            method: 'POST',
+            url: '/feedback',
+            data: feedbackRating
+        }).then((response) => {
+            console.log(response);
+            this.props.history.push('/5');
+        }).catch((error) => {
+            alert('Error with the server');
         })
-        this.props.history.push('/5');
     }
 
     handleComments = (event) => {
         const action = { type: 'UPDATE_COMMENTS', payload: this.state.rating };
         this.props.dispatch(action);
+        this.setState({
+            rating: '',
+        })
     }
 
     updateComments = (event) => {

@@ -12,15 +12,15 @@ class Home extends Component {
 
     // this function enables the user to click to navigate to the next part of the feedback
     handleNextBtn = (event) => {
-        this.setState({
-            rating: '',
-        })
         this.props.history.push('/2');
     }
 
-    handleFeelingRating = (event) => {
+    handleSubmitBtn = (event) => {
         const action = { type: 'UPDATE_FEELING', payload: this.state.rating };
         this.props.dispatch(action);
+        this.setState({
+            rating: '',
+        })
     }
 
     updateFeelingRating = (event) => {
@@ -42,7 +42,7 @@ class Home extends Component {
                     <br />
                     <br />
                     <input onChange={this.updateFeelingRating} className="Feedback-input" type="number"></input>
-                    <button onClick={this.handleFeelingRating}>Submit</button>
+                    <button onClick={this.handleSubmitBtn}>Submit</button>
                     <br />
                     <br />
                     <button onClick={this.handleNextBtn}>Next</button>

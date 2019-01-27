@@ -3,15 +3,15 @@ import { connect } from 'react-redux';
 
 class Understanding extends Component {
     handleNextBtn = (event) => {
-        this.setState({
-            rating: '',
-        })
         this.props.history.push('/3');
     }
 
-    handleUnderstandingRating = (event) => {
+    handleSubmitBtn = (event) => {
         const action = { type: 'UPDATE_UNDERSTANDING', payload: this.state.rating };
         this.props.dispatch(action);
+        this.setState({
+            rating: '',
+        })
     }
 
     updateUnderstandingRating = (event) => {
@@ -32,7 +32,7 @@ class Understanding extends Component {
                     <br />
                     <br />
                     <input onChange={this.updateUnderstandingRating} className="Feedback-input" type="number"></input>
-                    <button onClick={this.handleUnderstandingRating}>Submit</button>
+                    <button onClick={this.handleSubmitBtn}>Submit</button>
                     <br />
                     <br />
                     <button onClick={this.handleNextBtn}>Next</button>
