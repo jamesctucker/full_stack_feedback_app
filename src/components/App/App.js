@@ -5,6 +5,7 @@ import Understanding from './../Understanding/Understanding.js';
 import Support from './../Support/Support.js';
 import Comments from './../Comments/Comments.js';
 import ThankYou from './../ThankYou/ThankYou.js';
+import Admin from './../Admin/Admin.js';
 import { HashRouter as Router, Route } from 'react-router-dom';
 
 
