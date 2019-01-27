@@ -12,7 +12,7 @@ class Understanding extends Component {
     handleNextBtn = (event) => {
         this.props.history.push('/3');
     }
-
+    // this function sends understanding rating to the reducer and then resets the rating back to null
     handleSubmitBtn = (event) => {
         const action = { type: 'UPDATE_UNDERSTANDING', payload: this.state.rating };
         this.props.dispatch(action);
@@ -20,13 +20,14 @@ class Understanding extends Component {
             rating: '',
         })
     }
-
+    // this function updates the state
     updateUnderstandingRating = (event) => {
         this.setState({
             rating: event.target.value,
         })
     }
     render() {
+        // conditional rendering determines which 'submit' button is implemented on the page
         let status = '';
         let text = '';
         if (this.props.reduxStore.feeling === 0 ||
@@ -62,12 +63,14 @@ class Understanding extends Component {
                     </Card>
                 </div>
                 <div className="Feedback-review">
+                    {/* This card displays the ratings that have been submitted up to that point */}
                     <Card className="Card">
                         <h2>Review Your Feedback</h2>
                         <h3>Feelings: {this.props.reduxStore.feeling}</h3>
                         <h3>Understanding: {this.props.reduxStore.understanding}</h3>
                         <h3>Support: {this.props.reduxStore.support}</h3>
                         <h3>Comments: {this.props.reduxStore.comments}</h3>
+                        {/* conditionally-rendered button */}
                         <Button id="Final-submit-btn" color="primary" variant="contained"
                             disabled={status} onClick={this.handleSubmitFinalFeedback}>{text}</Button>
                     </Card>

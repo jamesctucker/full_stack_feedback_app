@@ -9,6 +9,7 @@ import '../App/App.css';
 
 
 class Comments extends Component {
+    // this function gathers the submitted ratings and POSTS them to the database
     handleSubmitFinalFeedback = (event) => {
         let feedbackRating = {
             feeling: this.props.reduxStore.feeling,
@@ -27,7 +28,7 @@ class Comments extends Component {
             alert('Error with the server');
         })
     }
-
+    // this function sends comments to the reducer and then resets the rating back to null
     handleSubmitBtn = (event) => {
         const action = { type: 'UPDATE_COMMENTS', payload: this.state.rating };
         this.props.dispatch(action);
@@ -35,13 +36,14 @@ class Comments extends Component {
             rating: '',
         })
     }
-
+    // this function updates the state
     updateComments = (event) => {
         this.setState({
             rating: event.target.value,
         })
     }
     render() {
+        // conditional rendering determines which 'submit' button is implemented on the page
         let status = '';
         let text = '';
         if (this.props.reduxStore.feeling === 0 ||
@@ -74,6 +76,7 @@ class Comments extends Component {
                             onClick={this.handleSubmitBtn}>Enter</Button>
                     </Card>
                 </div>
+                {/* This card displays the ratings that have been submitted up to that point */}
                 <div className="Feedback-review">
                     <Card className="Card">
                         <h2>Review Your Feedback</h2>
@@ -81,6 +84,7 @@ class Comments extends Component {
                         <h3>Understanding: {this.props.reduxStore.understanding}</h3>
                         <h3>Support: {this.props.reduxStore.support}</h3>
                         <h3>Comments: {this.props.reduxStore.comments}</h3>
+                        {/* conditionally-rendered button */}
                         <Button id="Final-submit-btn" color="primary" variant="contained"
                             disabled={status} onClick={this.handleSubmitFinalFeedback}>{text}</Button>
                     </Card>

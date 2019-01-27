@@ -10,6 +10,7 @@ class ThankYou extends Component {
         this.props.history.push('/');
     }
     render() {
+        // renders a button that allows the user to submit an additional feedback form
         return (
             <div>
                 <header className="Thank-you-header">
