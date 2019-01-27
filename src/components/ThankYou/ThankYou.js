@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import '../App/App.css';
+import Button from '@material-ui/core/Button';
+import Card from '@material-ui/core/Card';
 
 class ThankYou extends Component {
 
@@ -10,13 +13,15 @@ class ThankYou extends Component {
         return (
             <div>
                 <header className="Thank-you-header">
-                    <h1 className="Thank-you-title">Feedback!</h1>
+                    <h1 className="Thank-you-title">Project Feedback Form</h1>
                 </header>
                 <div className="Feedback-body">
-                    <h1>Thank You!</h1>
-                    <br />
-                    <br />
-                    <button onClick={this.handleNewFeedback}>Leave New Feedback</button>
+                    <Card className="Card">
+                        <h2>Thank You!</h2>
+                        <br />
+                        <br />
+                        <Button color="primary" variant="contained" onClick={this.handleNewFeedback}>Leave New Feedback</Button>
+                    </Card>
                 </div>
             </div>
         )

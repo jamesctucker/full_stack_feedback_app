@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  background-color: #033076;
+  background-color: royalblue;
   min-height: 70px;
   padding: 20px;
   color: white;
@@ -17,20 +17,54 @@
   font-size: large;
 }
 
-/* .Feedback-body {
-  width: 800px;
-  margin
-} */
-
 .Thank-you-header {
-  background-color: white;
+  background-color: royalblue;
   min-height: 70px;
   padding: 20px;
-  color: black;
-  border: 3px;
-  border-style: solid;
-  border-color: black;
+  color: white;
+}
 
+.Card {
+  width: 600px;
+  text-align: center;
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
 
+.Feedback-review {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.Feedback-body {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+#Rating-input {
+  margin: 10px;
+}
+
+#Next-btn {
+  margin: 10px;
+}
+
+#Submit-btn {
+  margin: 10px;
+}
+
+h2 {
+  color: royalblue;
+}
+
+h3{
+  font-style: italic;
+  color: slategrey;
+}
+
+p {
+  color: slategray;
 }
 
