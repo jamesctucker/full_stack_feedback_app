@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class ThankYou extends Component {
+
+    handleNewFeedback = (event) => {
+        this.props.history.push('/');
+    }
     render() {
         return (
             <div>
@@ -10,6 +14,9 @@ class ThankYou extends Component {
                 </header>
                 <div className="Feedback-body">
                     <h1>Thank You!</h1>
+                    <br />
+                    <br />
+                    <button onClick={this.handleNewFeedback}>Leave New Feedback</button>
                 </div>
             </div>
         )
@@ -17,4 +24,7 @@ class ThankYou extends Component {
 }
 
 
-export default connect()(ThankYou);
+const mapReduxStoreToProps = (reduxStore) => ({
+    reduxStore: reduxStore
+});
+export default connect(mapReduxStoreToProps)(ThankYou);

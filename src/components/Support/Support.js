@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class Support extends Component {
+    handleNextBtn = (event) => {
+        this.props.history.push('/4');
+    }
     render() {
         return (
             <div>
@@ -17,7 +20,7 @@ class Support extends Component {
                     <input className="Feedback-input" type="number"></input>
                     <br />
                     <br />
-                    <button>Next</button>
+                    <button onClick={this.handleNextBtn}>Next</button>
                 </div>
                 <div className="Feedback-review">
                     <h1>Review Your Feedback</h1>
@@ -34,4 +37,7 @@ class Support extends Component {
 }
 
 
-export default connect()(Support);
+const mapReduxStoreToProps = (reduxStore) => ({
+    reduxStore: reduxStore
+});
+export default connect(mapReduxStoreToProps)(Support);

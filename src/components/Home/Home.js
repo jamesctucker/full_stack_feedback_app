@@ -3,6 +3,12 @@ import { connect } from 'react-redux';
 import '../App/App.css';
 
 class Home extends Component {
+
+    // this function enables the user to click to navigate to the next part of the feedback
+    handleNextBtn = (event) => {
+        this.props.history.push('/2');
+    }
+
     render() {
         return (
             <div>
@@ -18,7 +24,7 @@ class Home extends Component {
                     <input className="Feedback-input" type="number"></input>
                     <br />
                     <br />
-                    <button>Next</button>
+                    <button onClick={this.handleNextBtn}>Next</button>
                 </div>
                 <div className="Feedback-review">
                     <h1>Review Your Feedback</h1>
@@ -35,4 +41,7 @@ class Home extends Component {
 
 }
 
-export default connect()(Home);
+const mapReduxStoreToProps = (reduxStore) => ({
+    reduxStore: reduxStore
+});
+export default connect(mapReduxStoreToProps)(Home);
