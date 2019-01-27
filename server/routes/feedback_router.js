@@ -23,6 +23,15 @@ router.post('/', (req, res) => {
     });
 })
 
+router.get('/:id', (req,res) => {
+    const id = req.params.id;
+    const queryText = `SELECT id, feeling, understanding, support,
+    comments FROM "feedback" 
+    ORDER BY id ASC
+    LIMIT 100;`;
+    pool.query(queryText, [id]).then(function ())
+})
+
 
 
 module.exports = router;

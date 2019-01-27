@@ -20,6 +20,7 @@ class Support extends Component {
         })
     }
 
+    // this function updates the state
     updateSupportRating = (event) => {
         this.setState({
             rating: event.target.value,
