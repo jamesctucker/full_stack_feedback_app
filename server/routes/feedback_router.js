@@ -23,19 +23,19 @@ router.post('/', (req, res) => {
     });
 })
 
-router.get('/:id', (req,res) => {
-    const id = req.params.id;
-    const queryText = `SELECT id, feeling, understanding, support,
-    comments FROM "feedback" 
-    ORDER BY id ASC
-    LIMIT 100;`;
-    pool.query(queryText, [id]).then((result) => {
-        res.sendStatus(200);
-    }).catch((error) => {
-        console.log(error, 'GET');
-        res.sendStatus(500);
-    });
-})
+// router.get('/:id', (req,res) => {
+//     const id = req.params.id;
+//     const queryText = `SELECT id, feeling, understanding, support,
+//     comments FROM "feedback" 
+//     ORDER BY id ASC
+//     LIMIT 100;`;
+//     pool.query(queryText, [id]).then((result) => {
+//         res.sendStatus(200);
+//     }).catch((error) => {
+//         console.log(error, 'GET');
+//         res.sendStatus(500);
+//     });
+// })
 
 
 
