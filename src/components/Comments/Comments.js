@@ -73,7 +73,7 @@ class Comments extends Component {
                         <br />
                         <br />
                         <Button id="Submit-btn" variant="contained"
-                            onClick={this.handleSubmitBtn}>Enter</Button>
+                            onClick={this.handleSubmitBtn}>Submit Rating</Button>
                     </Card>
                 </div>
                 {/* This card displays the ratings that have been submitted up to that point */}

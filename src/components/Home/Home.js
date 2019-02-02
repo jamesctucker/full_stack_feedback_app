@@ -65,7 +65,7 @@ class Home extends Component {
                         <br />
                         <br />
                         <Button id="Submit-btn" variant="contained"
-                            onClick={this.handleSubmitBtn}>Enter</Button>
+                            onClick={this.handleSubmitBtn}>Submit Rating</Button>
                         <Button id="Next-btn" color="primary" variant="contained"
                             onClick={this.handleNextBtn}>Next</Button>
                     </Card>
